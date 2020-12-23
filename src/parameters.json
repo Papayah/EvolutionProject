@@ -1,0 +1,10 @@
+  
+{
+  "width": 50,
+  "height": 50,
+  "initialEnergy": 50,
+  "moveEnergy": 1,
+  "energyFromGrass": 10,
+  "jungleMultiplier": 0.3,
+  "numberOfAnimals": 30
+}
