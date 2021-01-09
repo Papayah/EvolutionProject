@@ -13,9 +13,9 @@ public class Animal extends AbstractMapElement
     private MapDirection orientation;
     private double energy;
     private final double initialEnergy;
-    public Genes genes;
+    public Genes genes; // public?
 
-    public int offspringNumber = 0;
+    public int offspringNumber = 0; // j.w.
     public int daysAlive = 0;
 
     public boolean isDead = false;
@@ -108,7 +108,7 @@ public class Animal extends AbstractMapElement
         observers.remove(observer);
     }
 
-    public void positionChanged(IMapElement object, Vector2d oldPosition, Vector2d newPosition)
+    public void positionChanged(IMapElement object, Vector2d oldPosition, Vector2d newPosition) // public?
     {
         this.daysAlive++;
         for(IPositionChangeObserver observer : observers)

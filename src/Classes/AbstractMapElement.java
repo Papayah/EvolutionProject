@@ -1,4 +1,4 @@
-package Classes;
+package Classes;    // jeśli ten pakiet zawiera klasy, to co zawierają pozostałe?
 
 import Interfaces.IMapElement;
 

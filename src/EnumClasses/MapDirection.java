@@ -1,4 +1,4 @@
-package EnumClasses;
+package EnumClasses;    // nazwy pakietów raczej małymi literami + zbiór niepowiązanych ze sobą pakietów? + // podział na pakiety powinien wynikać z logicznego podziału na podzespoły; to że coś jest enumem to nie jest powód, żeby to trzymać razem
 
 import Classes.Vector2d;
 
@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public enum MapDirection
 {
-    N,
+    N,  // czytelniejsze by były pełne nazwy
     NE,
     E,
     SE,
@@ -16,7 +16,7 @@ public enum MapDirection
     W,
     NW;
 
-    private static final List<MapDirection> Values = List.of(values());
+    private static final List<MapDirection> Values = List.of(values()); // PascalCase jest dla typów; albo wielkimi jako stała, albo małymi jako zmienna
     private static final int size = Values.size();
 
 
@@ -51,12 +51,12 @@ public enum MapDirection
         };
     }
 
-    public MapDirection multipleNext(int n)
+    public MapDirection multipleNext(int n) // next(int) też by było czytelne
     {
         MapDirection orientation = this;
 
         for(int i = 0; i < n; i++)
-            orientation = orientation.next();
+            orientation = orientation.next();   // myślałem, że po to Pan ma Values, żeby nie musieć iterować
 
         return orientation;
     }
@@ -80,7 +80,7 @@ public enum MapDirection
     {
         return switch (this)
         {
-            case N -> new Vector2d(0, 1);
+            case N -> new Vector2d(0, 1);   // nowy wektor co wywołanie
             case NE -> new Vector2d(1, 1);
             case E -> new Vector2d(1, 0);
             case SE -> new Vector2d(1, -1);

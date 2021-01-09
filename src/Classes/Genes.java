@@ -8,13 +8,13 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Genes
 {
-    private static final int N = 32;
+    private static final int N = 32;    // N to liczba wszystkich genów, czy dopuszczalnych wartości genu?
 
     private final int [] genesArray;
 
     public Genes()
     {
-        this.genesArray = new Random().ints(32, 0, 8).toArray();
+        this.genesArray = new Random().ints(32, 0, 8).toArray();    // czemu 32?
         this.addMissing();
     }
 
@@ -57,7 +57,7 @@ public class Genes
     {
         int point1 = ThreadLocalRandom.current().nextInt(1, N - 1);
         int point2 = ThreadLocalRandom.current().nextInt(1, N - 1);
-        while(point1 == point2)
+        while(point1 == point2) // do-while
             point2 = ThreadLocalRandom.current().nextInt(1, N - 1);
 
         if(point1 > point2)
@@ -94,7 +94,7 @@ public class Genes
 
     public int[] getGenesArray()
     {
-        return this.genesArray;
+        return this.genesArray; // a tablica nie jest przypadkiem modyfikowalna?
     }
 
     public int getRandomGene()

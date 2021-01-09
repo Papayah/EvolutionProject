@@ -10,7 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-public class JSONLoader
+public class JSONLoader // czy to na pewno element wizualizacji?
 {
     public int width;
     public int height;

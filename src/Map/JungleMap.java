@@ -13,7 +13,7 @@ import java.util.stream.IntStream;
 
 public class JungleMap implements IWorldMap, IPositionChangeObserver
 {
-    public int width;
+    public int width;   // public?
     public int height;
     public int jungleWidth;
     public int jungleHeight;
@@ -211,7 +211,7 @@ public class JungleMap implements IWorldMap, IPositionChangeObserver
             {
                 Vector2d offspringPosition = getOffspringPosition(stackedAnimals.getFirst().getPosition());
                 double maxEnergy = 0;
-                double secondMaxEnergy = -21.37;
+                double secondMaxEnergy = -21.37;    // skąd ta liczba?
                 LinkedList<Animal> strongest = new LinkedList<>();
                 LinkedList<Animal> secondStrongest = new LinkedList<>();
                 int hornyCounter = 0;
@@ -225,7 +225,7 @@ public class JungleMap implements IWorldMap, IPositionChangeObserver
                         {
                             secondMaxEnergy = maxEnergy;
                             maxEnergy = animal.getEnergy();
-                            secondStrongest.clear();
+                            secondStrongest.clear();    // prawdopodobnie wygodniej by było przepisać referencję i stworzyć nową listę
                             secondStrongest.addAll(strongest);
                             strongest.clear();
                             strongest.add(animal);
@@ -403,10 +403,10 @@ public class JungleMap implements IWorldMap, IPositionChangeObserver
 
     public List<Grass> getGrasses()
     {
-        return this.grasses;
+        return this.grasses;    // naruszona hermetyzacja
     }
 
-    public int animalCounter()
+    public int animalCounter()  // lepiej jak nazwa metody brzmi jak polecenie
     {
         return animals.size();
     }
@@ -440,7 +440,7 @@ public class JungleMap implements IWorldMap, IPositionChangeObserver
         return temp / (double) animalCounter();
     }
 
-    public String getDominatingGenotype()
+    public String getDominatingGenotype()   // czy to na pewno zadanie dla mapy?
     {
         int max = 0;
         HashMap<String, Integer> geneMap = new HashMap<>();
